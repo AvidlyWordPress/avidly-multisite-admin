@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Avidly Multisite Admin
- * Description: Allow administrators on multisite to save unfiltered HTML, edit users and add new user to network level without confirmation. Note: You must also enable "Add New Users" from global Network Settings.
+ * Description: Allow administrators on multisite to save unfiltered HTML, edit users and add new users to network level without confirmation. Note: You must also enable "Add New Users" setting from global Network Settings.
  * Version: 1.0
  * Author: Avidly
  * Author URI: http://avidly.fi
