@@ -31,11 +31,11 @@ function avidly_mu_admin_activation_hook( $network_wide ) {
 	if ( is_multisite() && $network_wide ) {
 		foreach ( get_sites( array( 'fields' => 'ids' ) ) as $blog_id ) {
 			switch_to_blog( $blog_id );
-			avidly_check_caps( 'add' );
+			avidly_mu_admin_check_caps( 'add' );
 			restore_current_blog();
 		}
 	} else {
-		avidly_check_caps( 'add' );
+		avidly_mu_admin_check_caps( 'add' );
 	}
 }
 
@@ -49,11 +49,11 @@ function avidly_mu_admin_deactivation_hook( $network_wide ) {
 	if ( is_multisite() && $network_wide ) {
 		foreach ( get_sites( array( 'fields' => 'ids' ) ) as $blog_id ) {
 			switch_to_blog( $blog_id );
-			avidly_check_caps( 'remove' );
+			avidly_mu_admin_check_caps( 'remove' );
 			restore_current_blog();
 		}
 	} else {
-		avidly_check_caps( 'remove' );
+		avidly_mu_admin_check_caps( 'remove' );
 	}
 }
 
@@ -63,7 +63,7 @@ function avidly_mu_admin_deactivation_hook( $network_wide ) {
  * @param string $function add or remove capability.
  * @return $admin_object
  */
-function avidly_check_caps( $function = 'add' ) {
+function avidly_mu_admin_check_caps( $function = 'add' ) {
 	$admin_object = get_role( 'administrator' );
 
 	$admin_caps = array(
